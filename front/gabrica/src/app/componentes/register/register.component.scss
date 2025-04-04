@@ -1,0 +1,48 @@
+section{
+    height: auto;
+    background: rgb(51,13,92);
+    background: linear-gradient(180deg, rgba(51,13,92,1) 39%, rgba(102,31,173,1) 86%); 
+}
+
+#publicity{
+    height: 100%;
+}
+
+#publicity>img{
+    height: fit-content;
+}
+
+#publicity>img{
+    height: 100vh;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0));
+}
+
+form{
+    height: 92vh;
+}
+
+form>div>div{
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    background-color: #330D5C;
+}
+
+input[type=submit]{
+    background-color: #330D5C;
+    height: 35px;
+}
+
+::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.politics{
+    height: 50px;
+}
+@media (max-width: 580px) {
+    #publicity>img{
+        height: 80vh;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0));
+    }
+}
