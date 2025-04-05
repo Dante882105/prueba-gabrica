@@ -8,7 +8,7 @@ section{
     height: 100%;
 }
 
-#publicity>img{
+.redondo{
     height: fit-content;
 }
 
@@ -17,7 +17,7 @@ section{
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0));
 }
 
-form{
+#form{
     height: 92vh;
 }
 
@@ -33,16 +33,23 @@ input[type=submit]{
     height: 35px;
 }
 
-::placeholder{
-    color: rgba(0, 0, 0, 0.4);
+select, ::placeholder{
+    color: rgba(0, 0, 0, 0.4); 
 }
 
 .politics{
     height: 50px;
 }
+
+.texto{
+    color: #330D5C;
+}
 @media (max-width: 580px) {
     #publicity>img{
         height: 80vh;
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0));
+    };
+    #form{
+        height: auto;
     }
 }
