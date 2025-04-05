@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GetIpService } from '../../services/get-ip.service';
+//Importación de sweetalert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -97,11 +99,31 @@ export class RegisterComponent implements OnInit{
 
   //Evento al enviar el formulario con submit
   enviar_info(){
-    if(this.formulario.valid){
-      alert("enviamos el formulario");
-    }else{
-      alert("No te funcionara si no llenas los campos")
+    if(this.formulario.valid){ //Formiulario válido
+      this.correctForm()
+    }else{ //Formulario no valido
+      this.errorForm();
     }
+  };
+
+  //Modal para el caso en el que el formulario no fue correctamente diligenciado
+  errorForm() {
+    Swal.fire({
+      title: '¡Error!',
+      text: '¡Uno o más campos del formulario no ha sido diligenciado correctamente! Por favor verifica la información brindada.',
+      icon: 'error',
+      confirmButtonText: 'Entendido'
+    });
+  };
+
+  //Modal para el caso en el que el formulario fue correctamente diligenciado
+  correctForm(){
+    Swal.fire({
+      title: "¡Información enviada correctamente! Gracias por tu inscripción",
+      icon: "success",
+      draggable: true,
+      confirmButtonText: 'Cerrar'
+    });
   };
 
 };
