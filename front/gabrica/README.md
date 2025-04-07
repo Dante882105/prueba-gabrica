@@ -1,59 +1,57 @@
-# Gabrica
+# Prueba Gabrica
+## Descargar proyecto
+Para descargar el proyecto se hace desde cmd o desde la consola del editor de texto.
+Una vez ubicado en la carpeta donde se desea tener el proyecto anidado, se ejecuta el siguiente comando.
+```
+git clone https://github.com/Dante882105/prueba-gabrica.git
+```
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+## Front End
+Ubicado en la rama main del repositorio git
 
-## Development server
+### Tecnologías aplicadas
+* Angular CLI: 19.2.6
+* Node: 20.10.0
+* npm: 10.2.3
+* Bootstrap 5.3.5
+* Bootstrap icons
+* SweetAlert2
 
-To start a local development server, run:
+### Instalación de librerías.
+Basado en la estructura de carpetas, se deberá ingresar en la ruta front\gabrica y ejecutar el comando en la consola del editor de texto o cmd a continuación.
+```
+npm install
+```
 
-```bash
+### Lanzamiento de proyecto en local.
+En la carpeta front/gabrica se deberá ejecutar el comando siguiente en la consola del editor de texto o cmd.
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Backend 
+Ubicado en la rama git back_gabrica
 
-## Code scaffolding
+### Tecnologías aplicadas
+* PHP
+* xampp
+* MySQL
+* Apache
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+### Manejo de Tecnología
+Deberá realizar la instalación de xampp y en la ruta C:\xampp\htdocs debera alojar la carpeta y ttodo el proyecto por medio del sigueinte comando en el cmd o consola del navegador.
+```
+git clone https://github.com/Dante882105/prueba-gabrica.git
+```
+Una vez clonado el proyecto, cambiar de rama a back_gabrica
+```
+git checkout back_gabrica
+```
+Una vex realizado dichos pasos, se procederá a ir al navegador de su preferencia (FIrefox, Chrome, etc.), y se dirigirá a la url para ver las carpetas desde su navegador.
+```
+http://localhost/<nombre_carpeta_donde_se_alojará_el_proyecto>/prueba-gabrica/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Lanzamiento del proyecto.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+En xampp desplegar el servidor para MySQL y Apache

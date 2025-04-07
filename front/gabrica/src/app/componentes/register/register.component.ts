@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+//Importación de los servicios
 import { GetIpService } from '../../services/get-ip.service';
+import { GuardarDatosService } from '../../services/guardar-datos.service';
 //Importación de sweetalert
 import Swal from 'sweetalert2';
 
@@ -11,6 +13,7 @@ import Swal from 'sweetalert2';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent implements OnInit{
+  @ViewChild('formularioInscripcion', {static: false}) formularioInscripcion!: ElementRef;
   //Se declaran las variables a usar
   public formulario!: FormGroup;
   public ipClient!: string;
@@ -19,7 +22,8 @@ export class RegisterComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder, //Se genera el formulario reactivo con FormBuilder
-    public _getIp: GetIpService //se integra el servicio para obtener la ipr del cliente
+    public _getIp: GetIpService, //se integra el servicio para obtener la ipr del cliente
+    private _saveData: GuardarDatosService //Se define una variable privada para el uso del servicio GuardarDatos
   ){};
 
   ngOnInit(): void {
@@ -30,8 +34,9 @@ export class RegisterComponent implements OnInit{
     //Se genera el servicio y su subscripción para obtener la IP del cliente
     this._getIp.IpClient().subscribe({
       next: ((response)=>{
+        this.formulario.get('ip')?.setValue(response.ip);
         this.ipClient = response.ip;
-        console.log(response, this.ipClient);
+        console.log(response, this.formulario.get('ip')?.value);
       }),
       error: ((err)=>{
         console.error(err)
@@ -100,7 +105,17 @@ export class RegisterComponent implements OnInit{
   //Evento al enviar el formulario con submit
   enviar_info(){
     if(this.formulario.valid){ //Formiulario válido
-      this.correctForm()
+      this._saveData.guardado(this.formulario.value).subscribe({
+        next: (response)=>{
+          this.formularioInscripcion.nativeElement.className = 'd-none';
+          console.log(response);
+          this.correctForm();
+        },
+        error: (error)=>{
+          console.log(error);
+          this.errorForm();
+        }
+      });
     }else{ //Formulario no valido
       this.errorForm();
     }
