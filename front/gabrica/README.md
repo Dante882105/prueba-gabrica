@@ -47,7 +47,7 @@ Una vez clonado el proyecto, cambiar de rama a back_gabrica
 ```
 git checkout back_gabrica
 ```
-Una vex realizado dichos pasos, se procederá a ir al navegador de su preferencia (FIrefox, Chrome, etc.), y se dirigirá a la url para ver las carpetas desde su navegador.
+Una vez realizado dichos pasos, se procederá a ir al navegador de su preferencia (FIrefox, Chrome, etc.), y se dirigirá a la url para ver las carpetas desde su navegador.
 ```
 http://localhost/<nombre_carpeta_donde_se_alojará_el_proyecto>/prueba-gabrica/
 ```
