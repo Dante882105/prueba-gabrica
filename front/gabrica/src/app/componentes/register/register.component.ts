@@ -113,19 +113,19 @@ export class RegisterComponent implements OnInit{
         },
         error: (error)=>{
           console.log(error);
-          this.errorForm();
+          this.errorForm("¡No se pudo conetar al servidor, intentalo más tarde!");
         }
       });
     }else{ //Formulario no valido
-      this.errorForm();
+      this.errorForm("¡Uno o más campos del formulario no ha sido diligenciado correctamente! Por favor verifica la información brindada.");
     }
   };
 
   //Modal para el caso en el que el formulario no fue correctamente diligenciado
-  errorForm() {
+  errorForm(message:string) {
     Swal.fire({
       title: '¡Error!',
-      text: '¡Uno o más campos del formulario no ha sido diligenciado correctamente! Por favor verifica la información brindada.',
+      text: message,
       icon: 'error',
       confirmButtonText: 'Entendido'
     });
